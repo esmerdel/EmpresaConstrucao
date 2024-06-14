@@ -37,7 +37,7 @@ if ($result->rowCount() > 0) {
                 <td>" . $projeto["localizacao"] . "</td>
                 <td>" . $projeto["data_inicio"] . "</td>
                 <td>
-                    <a href='editar_projeto.php?id=" . $projeto["id"] . "' class='btn btn-warning'>Editar</a>
+                    <a href='alterar_projeto.php?id=" . $projeto["id"] . "' class='btn btn-warning'>Alterar</a>
                     <a href='excluir_projeto.php?id=" . $projeto["id"] . "' class='btn btn-danger'>Excluir</a>
                 </td>
               </tr>";

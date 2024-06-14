@@ -33,6 +33,11 @@ $conn = $db->getConexao(); // Obtém a conexão usando o método getConexao()
             <button type="submit" class="btn btn-success mt-3">Salvar</button>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+        <a href="index.php" class="btn btn-secondary mt-3">Voltar</a>
+    </div>
+</div>
 </form>
 
 <?php
