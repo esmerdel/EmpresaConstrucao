@@ -1,24 +1,19 @@
 <?php
 require_once("../cabecalho.php");
-require_once("../connection.php"); // Inclua o arquivo de conexão com o banco de dados
+require_once("../connection.php");
 
-// Verifique se um ID foi fornecido na URL
 if (!isset($_GET['id'])) {
     die("ID do projeto não fornecido.");
 }
 
 $id = $_GET['id'];
 
-// Criar uma instância da conexão com o banco de dados
 $db = new Conexao();
 $conn = $db->conectar();
-
-// Verificar se houve erro na conexão
 if (!$conn) {
     die("Erro ao conectar ao banco de dados");
 }
 
-// Carregar os dados atuais do projeto
 $sql = "SELECT * FROM projetos WHERE id = :id";
 $stmt = $conn->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -30,7 +25,6 @@ if (!$projeto) {
     die("Projeto não encontrado.");
 }
 
-// Atualizar os dados do projeto no banco de dados
 if ($_POST) {
     $nome = $_POST['nome'];
     $localizacao = $_POST['localizacao'];
@@ -46,7 +40,6 @@ if ($_POST) {
 
         if ($stmt->execute()) {
             echo "Projeto atualizado com sucesso!";
-            // Redirecionar para a lista de projetos após atualização
             header("Location: index.php");
             exit;
         } else {

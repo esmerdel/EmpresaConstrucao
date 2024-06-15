@@ -1,10 +1,10 @@
 <?php
 require_once("../cabecalho.php");
-require_once("../functions.php"); // Inclua o arquivo functions.php que contém as funções necessárias
-require_once("../connection.php"); // Inclua o arquivo de conexão
+require_once("../functions.php"); 
+require_once("../connection.php");
 
 $db = new Conexao();
-$conn = $db->getConexao(); // Obtém a conexão usando o método getConexao()
+$conn = $db->getConexao();
 
 ?>
 

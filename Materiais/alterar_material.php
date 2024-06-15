@@ -2,16 +2,13 @@
 <?php require_once("../connection.php"); ?>
 
 <?php
-// Verifica se o parâmetro id foi enviado via GET
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo "ID do material não foi especificado.";
     exit;
 }
 
-// Obtém o ID do material a ser alterado
 $id_material = $_GET['id'];
 
-// Verifica se o formulário foi submetido
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $quantidade = $_POST['quantidade'];
@@ -40,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Busca os dados atuais do material no banco de dados
 $db = new Conexao();
 $conn = $db->conectar();
 
@@ -75,7 +71,7 @@ if (!$material) {
             <label for="projeto_id" class="form-label">Projeto</label>
             <select class="form-select" name="projeto_id" required>
                 <?php
-                // Query para selecionar todos os projetos
+
                 $sql_projetos = "SELECT id, nome FROM projetos";
                 $result_projetos = $conn->query($sql_projetos);
 

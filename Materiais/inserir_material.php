@@ -21,11 +21,8 @@
             <select class="form-select" name="projeto_id" required>
                 <option value="">Selecione um projeto</option>
                 <?php
-                // Criar uma instância da conexão com o banco de dados
                 $db = new Conexao();
                 $conn = $db->conectar();
-
-                // Query para selecionar todos os projetos
                 $sql = "SELECT id, nome FROM projetos";
                 $result = $conn->query($sql);
 
